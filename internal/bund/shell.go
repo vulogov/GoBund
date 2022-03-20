@@ -9,7 +9,7 @@ import (
 
 var (
 	commands = []string{
-		".exit",
+
 	}
 )
 
