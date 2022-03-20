@@ -8,9 +8,7 @@ import (
 )
 
 var (
-	commands = []string{
-
-	}
+	commands = []string{}
 )
 
 func Shell() {

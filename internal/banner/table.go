@@ -5,6 +5,7 @@ import (
 
 	"github.com/mgutz/ansi"
 	"github.com/tomlazar/table"
+	tc "github.com/vulogov/ThreadComputation"
 
 	"github.com/vulogov/Bund/internal/conf"
 )
@@ -34,6 +35,7 @@ func Table() {
 			Rows: [][]string{
 				{"Version", conf.EVersion},
 				{"Extended version", conf.BVersion},
+				{"Core version", tc.VERSION},
 				{"Args", *conf.Args},
 			},
 		}
