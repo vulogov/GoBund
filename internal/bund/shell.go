@@ -11,7 +11,7 @@ import (
 var (
 	shellCmd cmap.Cmap
 	commands = []string{
-		".version", ".exit",
+		".version", ".exit", ".stack",
 	}
 )
 

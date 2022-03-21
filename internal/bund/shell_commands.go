@@ -1,9 +1,14 @@
 package bund
 
 import (
+	"fmt"
+	"os"
+	"github.com/mgutz/ansi"
+	"github.com/tomlazar/table"
 	"github.com/pieterclaerhout/go-log"
 	tc "github.com/vulogov/ThreadComputation"
 	"github.com/vulogov/Bund/internal/banner"
+	"github.com/vulogov/Bund/internal/conf"
 )
 
 type ShellCommand func(*tc.TCstate) interface{}
@@ -36,6 +41,37 @@ func ShellCommandVersion(core *tc.TCstate) interface{} {
 	return nil
 }
 
+func ShellCommandStack(core *tc.TCstate) interface{} {
+	var cfg table.Config
+	var data [][]string
+
+	cfg.ShowIndex = true
+	if *conf.Color {
+		cfg.Color = true
+		cfg.AlternateColors = true
+		cfg.TitleColorCode = ansi.ColorCode("white+buf")
+		cfg.AltColorCodes = []string{"", ansi.ColorCode("white:grey+h")}
+	} else {
+		cfg.Color = false
+		cfg.AlternateColors = false
+		cfg.TitleColorCode = ansi.ColorCode("white+buf")
+		cfg.AltColorCodes = []string{"", ansi.ColorCode("white:grey+h")}
+	}
+	if core.Ready() {
+		for x := 0; x < core.Res.Len(); x++ {
+			e := core.Res.Q().At(x)
+			data = append(data, []string{fmt.Sprintf("%v", e)})
+		}
+	}
+	tab := table.Table{
+		Headers: []string{"Value"},
+		Rows: data,
+	}
+	tab.WriteTable(os.Stdout, &cfg)
+	return nil
+}
+
 func init() {
 	AddShellCommand(".version", ShellCommandVersion)
+	AddShellCommand(".stack", ShellCommandStack)
 }
