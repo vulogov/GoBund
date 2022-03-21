@@ -6,6 +6,7 @@ import (
 	"github.com/peterh/liner"
 	"github.com/pieterclaerhout/go-log"
 	tc "github.com/vulogov/ThreadComputation"
+	"github.com/vulogov/Bund/internal/conf"
 )
 
 var (
@@ -30,7 +31,15 @@ func Shell() {
 		}
 		return
 	})
-
+	if *conf.CDebug {
+		log.Info("BUND core debug is on")
+		tc.SetVariable("tc.Debuglevel", "debug")
+		log.Infof("[ BUND ] core version: %v", tc.VERSION)
+	} else {
+		log.Debug("BUND core debug is off")
+		tc.SetVariable("tc.Debuglevel", "info")
+		log.Debugf("[ BUND ] core version: %v", tc.VERSION)
+	}
 	core := tc.Init()
 
 	out:
