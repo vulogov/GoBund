@@ -2,13 +2,17 @@ package bund
 
 import (
 	"strings"
-
+	"github.com/lrita/cmap"
 	"github.com/peterh/liner"
 	"github.com/pieterclaerhout/go-log"
+	tc "github.com/vulogov/ThreadComputation"
 )
 
 var (
-	commands = []string{}
+	shellCmd cmap.Cmap
+	commands = []string{
+		".version", ".exit",
+	}
 )
 
 func Shell() {
@@ -26,9 +30,27 @@ func Shell() {
 		}
 		return
 	})
+
+	core := tc.Init()
+
+	out:
 	for {
 		if cmd, err := line.Prompt("BUND> "); err == nil {
+			cmd = strings.Trim(cmd, "\n \t\r")
 			log.Debugf("shell get: %v", cmd)
+			switch cmd {
+			case ".exit":
+				log.Debug("Exiting")
+				break out
+			default:
+				if IsShellCommand(cmd) {
+					log.Debugf("Running shell command: %v", cmd)
+					RunShellCommand(cmd, core)
+				} else {
+					log.Debug("Executing in ThreadComputation")
+					core.Eval(cmd)
+				}
+			}
 		} else if err == liner.ErrPromptAborted {
 			log.Debug("Aborted")
 			break

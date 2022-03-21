@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/cosiner/argv v0.1.0
+	github.com/lrita/cmap v0.0.0-20200818170753-e987cd3dfa73
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
 	github.com/peterh/liner v1.2.2
 	github.com/pieterclaerhout/go-log v1.14.0
@@ -47,7 +48,6 @@ require (
 	github.com/kr/fs v0.1.0 // indirect
 	github.com/levigross/grequests v0.0.0-20190908174114-253788527a1a // indirect
 	github.com/loveleshsharma/gohive v0.0.0-20191008095549-7eec91c92993 // indirect
-	github.com/lrita/cmap v0.0.0-20200818170753-e987cd3dfa73 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-ieproxy v0.0.3 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
