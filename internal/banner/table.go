@@ -2,7 +2,7 @@ package banner
 
 import (
 	"os"
-
+	"fmt"
 	"github.com/mgutz/ansi"
 	"github.com/tomlazar/table"
 	tc "github.com/vulogov/ThreadComputation"
@@ -37,6 +37,7 @@ func Table(display bool) {
 				{"Extended version", conf.BVersion},
 				{"Core version", tc.VERSION},
 				{"Args", *conf.Args},
+				{"Core debug mode", fmt.Sprintf("%v", *conf.CDebug)},
 			},
 		}
 		tab.WriteTable(os.Stdout, &cfg)

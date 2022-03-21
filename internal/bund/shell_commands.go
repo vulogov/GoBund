@@ -41,6 +41,11 @@ func ShellCommandVersion(core *tc.TCstate) interface{} {
 	return nil
 }
 
+func ShellCommandLast(core *tc.TCstate) interface{} {
+	ShellDisplayResult(core, true)
+	return nil
+}
+
 func ShellCommandStack(core *tc.TCstate) interface{} {
 	var cfg table.Config
 	var data [][]string
@@ -74,4 +79,5 @@ func ShellCommandStack(core *tc.TCstate) interface{} {
 func init() {
 	AddShellCommand(".version", ShellCommandVersion)
 	AddShellCommand(".stack", ShellCommandStack)
+	AddShellCommand(".last", ShellCommandLast)
 }

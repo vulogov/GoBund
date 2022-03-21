@@ -11,7 +11,7 @@ import (
 var (
 	shellCmd cmap.Cmap
 	commands = []string{
-		".version", ".exit", ".stack",
+		".version", ".exit", ".stack", ".last",
 	}
 )
 
@@ -35,8 +35,9 @@ func Shell() {
 
 	out:
 	for {
-		if cmd, err := line.Prompt("BUND> "); err == nil {
+		if cmd, err := line.Prompt("[ BUND ] "); err == nil {
 			cmd = strings.Trim(cmd, "\n \t\r")
+			line.AppendHistory(cmd)
 			log.Debugf("shell get: %v", cmd)
 			switch cmd {
 			case ".exit":
@@ -49,6 +50,7 @@ func Shell() {
 				} else {
 					log.Debug("Executing in ThreadComputation")
 					core.Eval(cmd)
+					ShellDisplayResult(core, false)
 				}
 			}
 		} else if err == liner.ErrPromptAborted {
