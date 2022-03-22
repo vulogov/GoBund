@@ -54,7 +54,7 @@ var (
 	SExpr 			= Shell.Arg("expression", "[ BUND ] expression passed to shell.").String()
 
 	Run        	= App.Command("run", "Run BUND in non-interactive mode")
-	Scripts    	= Run.Arg("Scripts", "[ BUND ] code to load").String()
+	Scripts    	= Run.Arg("Scripts", "[ BUND ] code to load").Strings()
 	ShowRResult = Run.Flag("result", "Display result of scripts execution as it returned by [ BUND ]").Default("false").Bool()
 
 	Eval 				= App.Command("eval", "Evaluate a [ BUND ] expression")
