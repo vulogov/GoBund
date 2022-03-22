@@ -50,15 +50,15 @@ var (
 	VTable  = Version.Flag("table", "Display [ BUND ] inner information .").Default("true").Bool()
 
 	Shell      	= App.Command("shell", "Run [ BUND ] in interactive shell")
-	ShowSResult = Shell.Flag("result", "Display result of expressions evaluated in [ BUND ] shell").Default("false").Bool()
+	ShowSResult = Shell.Flag("result", "Display result of expressions evaluated in [ BUND ] shell").Default("false").Short('r').Bool()
 	SExpr 			= Shell.Arg("expression", "[ BUND ] expression passed to shell.").String()
 
 	Run        	= App.Command("run", "Run BUND in non-interactive mode")
 	Scripts    	= Run.Arg("Scripts", "[ BUND ] code to load").Strings()
-	ShowRResult = Run.Flag("result", "Display result of scripts execution as it returned by [ BUND ]").Default("false").Bool()
+	ShowRResult = Run.Flag("result", "Display result of scripts execution as it returned by [ BUND ]").Default("false").Short('r').Bool()
 
 	Eval 				= App.Command("eval", "Evaluate a [ BUND ] expression")
 	EStdin  		= Eval.Flag("stdin", "Read [ BUND ] expression from STDIN .").Default("false").Bool()
 	Expr 				= Eval.Arg("expression", "[ BUND ] expression.").String()
-	ShowEResult = Eval.Flag("result", "Display result of [ BUND ] expression evaluation").Default("false").Bool()
+	ShowEResult = Eval.Flag("result", "Display result of [ BUND ] expression evaluation").Default("false").Short('r').Bool()
 )
