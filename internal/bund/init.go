@@ -25,4 +25,5 @@ func Init() {
 		log.Debugf("ARGV: %v", Argv)
 		conf.Argv = Argv
 	}
+	stdlib.StoreArgs()
 }
