@@ -20,7 +20,12 @@ func EvalDisplayResult(core *tc.TCstate) {
 		if fun == nil {
 			out = fmt.Sprintf("%v", e)
 		} else {
-			out = fun(e, tc.String).(string)
+			out_add := fun(e, tc.String)
+			if out_add == nil {
+				out += fmt.Sprintf("%v", e)
+			} else {
+				out += out_add.(string)
+			}
 		}
 		if *conf.ShowEResult {
 			if *conf.Color {
