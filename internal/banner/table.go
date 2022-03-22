@@ -2,17 +2,18 @@ package banner
 
 import (
 	"os"
-
+	"fmt"
 	"github.com/mgutz/ansi"
 	"github.com/tomlazar/table"
+	tc "github.com/vulogov/ThreadComputation"
 
 	"github.com/vulogov/Bund/internal/conf"
 )
 
-func Table() {
+func Table(display bool) {
 	var cfg table.Config
 
-	if !*conf.VTable {
+	if !*conf.VTable && ! display {
 		return
 	}
 
@@ -28,13 +29,15 @@ func Table() {
 		cfg.TitleColorCode = ansi.ColorCode("white+buf")
 		cfg.AltColorCodes = []string{"", ansi.ColorCode("white:grey+h")}
 	}
-	if *conf.VTable {
+	if *conf.VTable || display {
 		tab := table.Table{
 			Headers: []string{"Description", "Value"},
 			Rows: [][]string{
 				{"Version", conf.EVersion},
 				{"Extended version", conf.BVersion},
+				{"Core version", tc.VERSION},
 				{"Args", *conf.Args},
+				{"Core debug mode", fmt.Sprintf("%v", *conf.CDebug)},
 			},
 		}
 		tab.WriteTable(os.Stdout, &cfg)

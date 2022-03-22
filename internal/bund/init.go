@@ -5,12 +5,14 @@ import (
 	"github.com/pieterclaerhout/go-log"
 
 	"github.com/vulogov/Bund/internal/conf"
+	"github.com/vulogov/Bund/internal/stdlib"
 	tlog "github.com/vulogov/Bund/internal/log"
 	"github.com/vulogov/Bund/internal/signal"
 )
 
 func Init() {
 	tlog.Init()
+	stdlib.InitStdlib()
 	log.Debug("[ BUND ] bund.Init() is reached")
 	signal.InitSignal()
 	if len(*conf.Args) > 0 {

@@ -18,7 +18,9 @@ PROJECT_MODULE  ?= $(shell $(GO) list -m)
 all: build
 
 # Humans running make:
-build: git-hooks check-version clean test lint cover-report compile
+rebuild: git-hooks check-version clean test lint cover-report compile
+
+build: compile-only
 
 # Build command for CI tooling
 build-ci: check-version clean lint test compile-only

@@ -13,5 +13,5 @@ func Version() {
 	Init()
 	log.Debug("[ BUND ] bund.Version() is reached")
 	banner.Banner(fmt.Sprintf("[ BUND %v ]", conf.EVersion))
-	banner.Table()
+	banner.Table(true)
 }
