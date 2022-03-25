@@ -15,7 +15,7 @@ pre:
 	go get github.com/lrita/cmap
 	go get github.com/gammazero/deque
 	go get github.com/common-nighthawk/go-figure
-	go get -u gonum.org/v1/gonum/...
+	go get gonum.org/v1/gonum/...
 	go get github.com/pieterclaerhout/go-formatter@v1.0.4
 	go get github.com/elliotchance/orderedmap
 	go mod download github.com/stretchr/testify
@@ -29,10 +29,10 @@ pre:
 	go get github.com/dustin/go-humanize
 	go get github.com/peterh/liner
 	go get github.com/goml/gobrain
-	go get -u github.com/c2fo/vfs/v5/...
+	go get github.com/c2fo/vfs/v5/...
 	go get github.com/commander-cli/cmd
 	go get github.com/Jeffail/gabs/v2
 	go get github.com/cosiner/argv
 	go get github.com/levigross/grequests
 	go get gotest.tools/gotestsum/testjson@v1.7.0
-	go get github.com/vulogov/ThreadComputation
+	go get -u github.com/vulogov/ThreadComputation
