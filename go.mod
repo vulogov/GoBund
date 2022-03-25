@@ -11,7 +11,7 @@ require (
 	github.com/peterh/liner v1.2.2
 	github.com/pieterclaerhout/go-log v1.14.0
 	github.com/tomlazar/table v0.1.1
-	github.com/vulogov/ThreadComputation v0.0.0-20220321170212-f9f541d0e3ce
+	github.com/vulogov/ThreadComputation v0.0.0-20220325000625-21770047be50
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
 
@@ -31,7 +31,7 @@ require (
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
 	github.com/alecthomas/units v0.0.0-20211218093645-b94a6e3cc137 // indirect
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220314183648-97c793e446ba // indirect
-	github.com/aws/aws-sdk-go v1.43.22 // indirect
+	github.com/aws/aws-sdk-go v1.43.25 // indirect
 	github.com/c2fo/vfs/v6 v6.1.0 // indirect
 	github.com/cstockton/go-conv v1.0.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -78,8 +78,8 @@ require (
 	gonum.org/v1/gonum v0.11.0 // indirect
 	google.golang.org/api v0.73.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20220322021311-435b647f9ef2 // indirect
+	google.golang.org/genproto v0.0.0-20220324131243-acbaeb5b85eb // indirect
 	google.golang.org/grpc v1.45.0 // indirect
-	google.golang.org/protobuf v1.27.1 // indirect
+	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
