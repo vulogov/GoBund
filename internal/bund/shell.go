@@ -66,6 +66,10 @@ func Shell() {
 					log.Debug("Executing in ThreadComputation")
 					core.Eval(cmd)
 					ShellDisplayResult(core, false)
+					if core.ExitRequested() {
+						log.Debug("Exiting from shell")
+						break out
+					}
 				}
 			}
 		} else if err == liner.ErrPromptAborted {
