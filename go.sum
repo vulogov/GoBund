@@ -126,6 +126,8 @@ github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl
 github.com/boombuler/barcode v1.0.1/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
 github.com/bradfitz/go-smtpd v0.0.0-20170404230938-deb6d6237625/go.mod h1:HYsPBTaaSFSlLx/70C2HPIMNZpVV8+vt/A+FMnYP11g=
 github.com/brianvoe/gofakeit/v4 v4.3.0/go.mod h1:GC/GhKWdGJ2eskBf4zGdjo3eHj8rX4E9hFLFg0bqK4s=
+github.com/brianvoe/gofakeit/v6 v6.15.0 h1:lJPGJZ2/07TRGDazyTzD5b18N3y4tmmJpdhCUw18FlI=
+github.com/brianvoe/gofakeit/v6 v6.15.0/go.mod h1:Ow6qC71xtwm79anlwKRlWZW6zVq9D2XHE4QSSMP/rU8=
 github.com/c2fo/vfs/v6 v6.1.0 h1:eW4txobzpG9i0lN/kHINHQsg+HMEIl5hrqTxUmoBS+8=
 github.com/c2fo/vfs/v6 v6.1.0/go.mod h1:DJRomhQ9hUAOhaZC2hRdAojKoDuLJraYcg72Ox+qJY4=
 github.com/cenkalti/backoff v2.2.1+incompatible/go.mod h1:90ReRw6GdpyfrHakVjL/QHaoyV4aDUVVkXQJJJ3NXXM=

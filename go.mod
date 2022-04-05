@@ -3,6 +3,7 @@ module github.com/vulogov/Bund
 go 1.17
 
 require (
+	github.com/brianvoe/gofakeit/v6 v6.15.0
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/cosiner/argv v0.1.0
 	github.com/elastic/go-sysinfo v1.7.1

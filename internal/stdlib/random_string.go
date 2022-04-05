@@ -14,7 +14,29 @@ func BUNDrandomString(l *tc.TCExecListener, name string, q *deque.Deque) (interf
   return res, nil
 }
 
+func bundGenerateRandomStringFromPattern(v interface{}) interface{} {
+  switch v.(type) {
+  case string:
+    res, err := regen.Generate(v.(string))
+    if err != nil {
+      return nil
+    }
+    return res
+  }
+  return nil
+}
+
+func BUNDrandomStringFromPattern(l *tc.TCExecListener, name string, q *deque.Deque) (interface{}, error) {
+  err := l.ExecuteSingleArgumentFunction("randomstring", q)
+  if err != nil {
+    return nil, err
+  }
+  return nil, nil
+}
+
 
 func init() {
   tc.SetCommand("random.String", BUNDrandomString)
+  tc.SetCommand("random.StringFromPattern", BUNDrandomStringFromPattern)
+  tc.RegisterFunctionCallback("randomstring", tc.String, bundGenerateRandomStringFromPattern)
 }

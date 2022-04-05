@@ -37,4 +37,5 @@ pre:
 	go get gotest.tools/gotestsum/testjson@v1.7.0
 	go get -u github.com/elastic/go-sysinfo
 	go get -u github.com/zach-klippenstein/goregen
+	go get -u github.com/brianvoe/gofakeit/v6
 	go get -u github.com/vulogov/ThreadComputation
