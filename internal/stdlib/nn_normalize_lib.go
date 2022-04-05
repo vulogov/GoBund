@@ -1,8 +1,8 @@
 package stdlib
 
 import (
-        floats "gonum.org/v1/gonum/floats"
-        stat "gonum.org/v1/gonum/stat"
+    floats "gonum.org/v1/gonum/floats"
+    stat "gonum.org/v1/gonum/stat"
 )
 
 func NumNorm(data []float64) []float64 {
@@ -12,11 +12,11 @@ func NumNorm(data []float64) []float64 {
     diff := xmax - xmin
     if diff == 0 {
       for i := 0; i < len(data); i++ {
-              res[i] = 0.0
+          res[i] = 0.0
       }
     } else {
       for i := 0; i < len(data); i++ {
-              res[i] = (data[i] - xmin) / diff
+          res[i] = (data[i] - xmin) / diff
       }
     }
     return res
