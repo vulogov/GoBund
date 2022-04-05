@@ -35,4 +35,6 @@ pre:
 	go get github.com/cosiner/argv
 	go get github.com/levigross/grequests
 	go get gotest.tools/gotestsum/testjson@v1.7.0
+	go get -u github.com/elastic/go-sysinfo
+	go get -u github.com/zach-klippenstein/goregen
 	go get -u github.com/vulogov/ThreadComputation
