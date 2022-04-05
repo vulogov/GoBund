@@ -16,6 +16,7 @@ require (
 	github.com/tomlazar/table v0.1.1
 	github.com/vulogov/ThreadComputation v0.0.0-20220405044527-f78ec9f6c7c0
 	github.com/zach-klippenstein/goregen v0.0.0-20160303162051-795b5e3961ea
+	gonum.org/v1/gonum v0.11.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
 
@@ -90,7 +91,6 @@ require (
 	golang.org/x/sys v0.0.0-20220403205710-6acee93ad0eb // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
-	gonum.org/v1/gonum v0.11.0 // indirect
 	google.golang.org/api v0.74.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20220401170504-314d38edb7de // indirect
