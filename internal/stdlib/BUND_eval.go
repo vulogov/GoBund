@@ -1,9 +1,12 @@
 package stdlib
 
 import (
+  "github.com/lrita/cmap"
   "github.com/pieterclaerhout/go-log"
   tc "github.com/vulogov/ThreadComputation"
 )
+
+var Callbacks cmap.Cmap
 
 type BUNDEnv struct {
   TC        *tc.TCstate
