@@ -15,8 +15,9 @@ require (
 	github.com/peterh/liner v1.2.2
 	github.com/pieterclaerhout/go-log v1.14.0
 	github.com/tomlazar/table v0.1.1
-	github.com/vulogov/ThreadComputation v0.0.0-20220406194924-7fa6e35bac2f
+	github.com/vulogov/ThreadComputation v0.0.0-20220406221204-64722ddaf232
 	github.com/zach-klippenstein/goregen v0.0.0-20160303162051-795b5e3961ea
+	golang.org/x/exp v0.0.0-20220328175248-053ad81199eb
 	gonum.org/v1/gonum v0.11.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
@@ -84,7 +85,6 @@ require (
 	github.com/tidwall/pretty v1.0.0 // indirect
 	go.opencensus.io v0.23.0 // indirect
 	golang.org/x/crypto v0.0.0-20220331220935-ae2d96664a29 // indirect
-	golang.org/x/exp v0.0.0-20220328175248-053ad81199eb // indirect
 	golang.org/x/net v0.0.0-20220403103023-749bd193bc2b // indirect
 	golang.org/x/oauth2 v0.0.0-20220309155454-6242fa91716a // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
