@@ -46,7 +46,8 @@ func bundGeneratorIterator(l *tc.TCExecListener, i interface{}) interface{} {
       if v == nil {
         break out
       }
-      if maxsize != 0 && c > maxsize {
+      log.Debugf("count=%v, maxsize=%v", c, maxsize)
+      if maxsize != 0 && c > (maxsize-1) {
         break out
       }
       switch v.(type) {

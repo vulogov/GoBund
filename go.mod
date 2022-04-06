@@ -15,7 +15,7 @@ require (
 	github.com/peterh/liner v1.2.2
 	github.com/pieterclaerhout/go-log v1.14.0
 	github.com/tomlazar/table v0.1.1
-	github.com/vulogov/ThreadComputation v0.0.0-20220406151644-e2a8aa97a3c0
+	github.com/vulogov/ThreadComputation v0.0.0-20220406194924-7fa6e35bac2f
 	github.com/zach-klippenstein/goregen v0.0.0-20160303162051-795b5e3961ea
 	gonum.org/v1/gonum v0.11.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
@@ -38,7 +38,7 @@ require (
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
 	github.com/alecthomas/units v0.0.0-20211218093645-b94a6e3cc137 // indirect
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220314183648-97c793e446ba // indirect
-	github.com/aws/aws-sdk-go v1.43.33 // indirect
+	github.com/aws/aws-sdk-go v1.43.34 // indirect
 	github.com/c2fo/vfs/v6 v6.1.0 // indirect
 	github.com/cstockton/go-conv v1.0.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -88,7 +88,7 @@ require (
 	golang.org/x/net v0.0.0-20220403103023-749bd193bc2b // indirect
 	golang.org/x/oauth2 v0.0.0-20220309155454-6242fa91716a // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
-	golang.org/x/sys v0.0.0-20220405210540-1e041c57c461 // indirect
+	golang.org/x/sys v0.0.0-20220406163625-3f8b81556e12 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/api v0.74.0 // indirect
