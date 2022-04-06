@@ -5,9 +5,10 @@ import (
 	tc "github.com/vulogov/ThreadComputation"
 	"github.com/vulogov/Bund/internal/conf"
 	"github.com/vulogov/Bund/internal/signal"
+	"github.com/vulogov/Bund/internal/stdlib"
 )
 
-func RunFile(core *tc.TCstate, name string) {
+func RunFile(core *stdlib.BUNDEnv, name string) {
 	log.Debugf("Running: %v", name)
 	code, err := tc.ReadFile(name)
 	if err != nil {
@@ -28,7 +29,7 @@ func Run() {
 		tc.SetVariable("tc.Debuglevel", "info")
 		log.Debugf("[ BUND ] core version: %v", tc.VERSION)
 	}
-	core := tc.Init()
+	core := stdlib.InitBUND()
 	for _, f := range *conf.Scripts {
 		RunFile(core, f)
 	}

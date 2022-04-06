@@ -8,14 +8,15 @@ import (
 	tc "github.com/vulogov/ThreadComputation"
 	"github.com/vulogov/Bund/internal/conf"
 	"github.com/vulogov/Bund/internal/signal"
+	"github.com/vulogov/Bund/internal/stdlib"
 	"github.com/mgutz/ansi"
 )
 
-func EvalDisplayResult(core *tc.TCstate) {
+func EvalDisplayResult(core *stdlib.BUNDEnv) {
 	var out string
-	if core.Ready() {
-		e := core.Get()
-		core.Set(e)
+	if core.TC.Ready() {
+		e := core.TC.Get()
+		core.TC.Set(e)
 		fun := tc.GetConverterCallback(e)
 		if fun == nil {
 			out = fmt.Sprintf("%v", e)
@@ -52,7 +53,7 @@ func BundEvalExpression(code string) {
 		tc.SetVariable("tc.Debuglevel", "info")
 		log.Debugf("[ BUND ] core version: %v", tc.VERSION)
 	}
-	core := tc.Init()
+	core := stdlib.InitBUND()
 	core.Eval(code)
 	EvalDisplayResult(core)
 }

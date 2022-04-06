@@ -9,6 +9,7 @@ require (
 	github.com/elastic/go-sysinfo v1.7.1
 	github.com/gammazero/deque v0.1.1
 	github.com/google/uuid v1.3.0
+	github.com/guptarohit/asciigraph v0.5.3
 	github.com/lrita/cmap v0.0.0-20200818170753-e987cd3dfa73
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
 	github.com/peterh/liner v1.2.2
@@ -52,7 +53,6 @@ require (
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/gxui v0.0.0-20151028112939-f85e0a97b3a4 // indirect
 	github.com/googleapis/gax-go/v2 v2.2.0 // indirect
-	github.com/guptarohit/asciigraph v0.5.3 // indirect
 	github.com/hbollon/go-edlib v1.6.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/joeshaw/multierror v0.0.0-20140124173710-69b34d4ec901 // indirect

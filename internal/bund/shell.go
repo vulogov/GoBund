@@ -9,6 +9,7 @@ import (
 	tc "github.com/vulogov/ThreadComputation"
 	"github.com/vulogov/Bund/internal/conf"
 	"github.com/vulogov/Bund/internal/banner"
+	"github.com/vulogov/Bund/internal/stdlib"
 )
 
 var (
@@ -46,7 +47,7 @@ func Shell() {
 		log.Debugf("[ BUND ] core version: %v", tc.VERSION)
 	}
 
-	core := tc.Init()
+	core := stdlib.InitBUND()
 
 	out:
 	for {
@@ -61,12 +62,12 @@ func Shell() {
 			default:
 				if IsShellCommand(cmd) {
 					log.Debugf("Running shell command: %v", cmd)
-					RunShellCommand(cmd, core)
+					RunShellCommand(cmd, core.TC)
 				} else {
 					log.Debug("Executing in ThreadComputation")
 					core.Eval(cmd)
-					ShellDisplayResult(core, false)
-					if core.ExitRequested() {
+					ShellDisplayResult(core.TC, false)
+					if core.TC.ExitRequested() {
 						log.Debug("Exiting from shell")
 						break out
 					}
