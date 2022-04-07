@@ -65,6 +65,8 @@ require (
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mattn/go-runewidth v0.0.13 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
+	github.com/mjibson/go-dsp v0.0.0-20180508042940-11479a337f12 // indirect
+	github.com/nakabonne/tstorage v0.3.5 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/pieterclaerhout/go-formatter v1.0.4 // indirect
 	github.com/pkg/errors v0.9.1 // indirect

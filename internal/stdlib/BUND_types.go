@@ -5,7 +5,8 @@ import (
 )
 
 const (
-  RandomNormal    = 500
+  RandomNormal      = 500
+  RandomExponential = 501
 )
 
 func BUND_Type(x interface{}) int {
@@ -15,6 +16,8 @@ func BUND_Type(x interface{}) int {
   switch x.(type) {
   case *BUND_Random_Distribution_Normal:
     return RandomNormal
+  case *BUND_Random_Distribution_Exponential:
+    return RandomExponential
   }
   return tc.Unknown
 }
@@ -25,6 +28,9 @@ func BUND_type_to_str(t interface{}) string {
     switch t {
     case RandomNormal:
       return "RandomNormalDistribution"
+    case RandomExponential:
+      return "RandomExponentialDistribution"
+
     }
   }
   return "Unknown"

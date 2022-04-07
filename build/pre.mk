@@ -40,4 +40,5 @@ pre:
 	go get -u github.com/brianvoe/gofakeit/v6
 	go get -u github.com/guptarohit/asciigraph
 	go get -u golang.org/x/exp/rand
+	go get -u github.com/nakabonne/tstorage
 	go get -u github.com/vulogov/ThreadComputation
