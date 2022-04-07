@@ -1,6 +1,7 @@
 package stdlib
 
 import (
+  "fmt"
   "github.com/pieterclaerhout/go-log"
   "github.com/gammazero/deque"
   tc "github.com/vulogov/ThreadComputation"
@@ -15,10 +16,12 @@ func bundGeneratorMakeIterator(l *tc.TCExecListener, i interface{}) interface{} 
   log.Debugf("generator: Attempting to make iterator for %T", i)
   igfun := tc.GetGenCallback(i)
   if igfun == nil {
+    l.TC.MakeError(fmt.Sprintf("iter: failed to get generator for %T", i))
     return nil
   }
   iter := igfun(i)
   if iter == nil {
+    l.TC.MakeError(fmt.Sprintf("iter: failed to create iterator for %T", i))
     return nil
   }
   iter.SetTC(l.TC)
@@ -37,6 +40,7 @@ func bundGeneratorIterator(l *tc.TCExecListener, i interface{}) interface{} {
     case "numbers":
       out = tc.MakeNumbers()
     default:
+      l.TC.MakeError(fmt.Sprintf("generate: unknown output type for generate[]: %v", out_type))
       return nil
     }
     c := int64(0)
@@ -66,6 +70,7 @@ func bundGeneratorIterator(l *tc.TCExecListener, i interface{}) interface{} {
       case *tc.TCNumbers:
         out.(*tc.TCNumbers).Add(v)
       default:
+        l.TC.MakeError(fmt.Sprintf("generate: unknown output type for generate[]: %v", out_type))
         return nil
       }
     }
