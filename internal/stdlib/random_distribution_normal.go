@@ -89,33 +89,17 @@ func BUNDRDNIterGet(res *tc.TCIterator) interface{} {
 }
 
 func BUNDrandomDistributionNormal(l *tc.TCExecListener, name string, q *deque.Deque) (interface{}, error) {
-  mu := l.TC.FromContext("mu", 1.0)
-  sigma := l.TC.FromContext("sigma", 2.0)
+  mu := EnsureFloat(l.TC.FromContext("mu", 1.0), 1.0)
+  sigma := EnsureFloat(l.TC.FromContext("sigma", 2.0), 2.0)
   for q.Len() > 0 {
     e := q.PopFront()
     switch e.(type) {
     case *tc.TCDict:
-      if e.(*tc.TCDict).D.Key("mu") {
-        mu1 := e.(*tc.TCDict).D.Get("mu")
-        switch mu1.(type) {
-        case float64:
-          mu = mu1.(float64)
-        case int64:
-          mu = float64(mu1.(int64))
-        }
-      }
-      if e.(*tc.TCDict).D.Key("sigma") {
-        sigma1 := e.(*tc.TCDict).D.Get("sigma")
-        switch sigma1.(type) {
-        case float64:
-          sigma = sigma1.(float64)
-        case int64:
-          sigma = float64(sigma1.(int64))
-        }
-      }
+      mu = EnsureFloatFromDict(e.(*tc.TCDict), "mu", mu)
+      sigma = EnsureFloatFromDict(e.(*tc.TCDict), "sigma", sigma)
     }
   }
-  return MakeRandomDistributionNormal(mu.(float64), sigma.(float64)), nil
+  return MakeRandomDistributionNormal(mu, sigma), nil
 }
 
 func init() {
